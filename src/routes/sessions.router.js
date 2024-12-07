@@ -17,9 +17,9 @@ const {
 
     
     
-router.post('/register',passportCall('jwt'),register)
+router.post('/register',register)
 
-router.post('/login',passportCall('jwt'),login)
+router.post('/login',login)
 
 router.get('/logut',passportCall('jwt'),logout)
 //router.post('')
