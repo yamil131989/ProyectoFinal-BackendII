@@ -37,7 +37,6 @@ app.use(cookieParser("palabrasecreta"))
 app.use(session({
     store: mongoStore.create({
         mongoUrl: process.env.MONGO_URL,
-        mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true }, ttl:60*60*1000
     }),
     secret : "secreto", resave: false, saveUninitialized: false
 }))
