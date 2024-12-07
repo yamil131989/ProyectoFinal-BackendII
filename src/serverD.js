@@ -68,5 +68,5 @@ app.use('/api/tickets',ticketRouter)
 app.use('/profile',profileRouter)
 
 exports.startServer = () => serverHttp.listen(PORT, () => {
-    logger.info(`Ejecutandose en : ${PORT}`) 
+console.log(`Ejecutandose en : ${PORT}`) 
 })
