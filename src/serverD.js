@@ -5,7 +5,7 @@ const session                = require("express-session")
 const mongoStore             = require("connect-mongo")
 const passport               = require("passport")
 const cors                   = require("cors")
-
+const {connectDB} = require('./config/index.js')
 
 const { Server: ServerHTTP}  = require("http")
 const { Server: ServerIO }   = require("socket.io")
@@ -56,7 +56,7 @@ const ticketRouter = require('./routes/ticket.router.js')
 const profileRouter = require('./routes/profile.router.js')
 const viewsRouter = require('./routes/views.router.js')
 
-
+connectDB()
 
 
 app.use('/',viewsRouter)
