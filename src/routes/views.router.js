@@ -1,3 +1,4 @@
+
 const { Router } = require('express')
 const { passportCall } = require('../passport/passportCall')
 const { autenticacionAdv } = require('../passport/authorization')
@@ -31,3 +32,4 @@ router.get('email',async(req,res)=>{
    res.send('email enviado')
 })
 
+module.exports=router
