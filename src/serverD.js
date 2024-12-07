@@ -67,6 +67,15 @@ app.use('/api/carts',CartRouter)
 app.use('/api/tickets',ticketRouter)
 app.use('/profile',profileRouter)
 
-exports.startServer = () => serverHttp.listen(PORT, () => {
-console.log(`Ejecutandose en : ${PORT}`) 
-})
+const startServer = async () => {
+    try {
+      await connectDB();  // Esperar que la base de datos se conecte
+      serverHttp.listen(PORT, () => {
+        console.log(`Servidor ejecutándose en el puerto: ${PORT}`);
+      });
+    } catch (error) {
+      console.error("No se pudo iniciar el servidor:", error);
+    }
+  };
+  
+  startServer();
